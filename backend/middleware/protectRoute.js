@@ -1,11 +1,9 @@
 import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
-import cookieParser from "cookie-parser"; // Ensure this is included in your middleware
 
 const protectRoute = async (req, res, next) => {
 	try {
-		// Ensure cookie-parser middleware is used in your app
-		const token = req.cookies.jwt; // Access the JWT from cookies
+		const token = req.cookies.jwt;
 
 		if (!token) {
 			return res.status(401).json({ error: "Unauthorized - No Token Provided" });
@@ -13,7 +11,7 @@ const protectRoute = async (req, res, next) => {
 
 		const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-		if (!decoded || !decoded.userId) {
+		if (!decoded) {
 			return res.status(401).json({ error: "Unauthorized - Invalid Token" });
 		}
 
@@ -24,10 +22,11 @@ const protectRoute = async (req, res, next) => {
 		}
 
 		req.user = user;
+
 		next();
 	} catch (error) {
 		console.log("Error in protectRoute middleware: ", error.message);
-		res.status(500).json({ error: "Internal Server Error" });
+		res.status(500).json({ error: "Internal server error" });
 	}
 };
 
