@@ -13,8 +13,9 @@ const Login = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
-            <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+
+        <div className="flex flex-col items-center justify-center max-w-96 mx-auto">
+            <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 mx-4">
                 <h1 className="text-3xl font-semibold text-center text-gary-300">
                     Login <span className="text-blue-500">ChatBridge</span>
                 </h1>
@@ -36,7 +37,7 @@ const Login = () => {
                     </Link>
                     <div>
                         <button type="submit" disabled={loading} className="btn btn-block btn-sm mt-2">
-                          {loading ? <span className="loading loading-spinner"></span> : "Login"}  
+                            {loading ? <span className="loading loading-spinner"></span> : "Login"}
                         </button>
                     </div>
                 </form>
