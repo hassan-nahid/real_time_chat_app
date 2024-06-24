@@ -33,19 +33,19 @@ const Signup = () => {
 				<form onSubmit={handleSubmit}>
 					<div>
 						<label className='label p-2'>
-							<span className='text-base label-text'>Full Name</span>
+							<span className='text-base label-text text-black'>Full Name</span>
 						</label>
 						<input type='text'value={inputs.fullName} onChange={(e) => setInputs({...inputs,fullName: e.target.value})} placeholder='Adam Smith' className='w-full input input-bordered  h-10' />
 					</div>
 					<div>
 						<label className='label p-2 '>
-							<span className='text-base label-text'>Username</span>
+							<span className='text-base label-text text-black'>Username</span>
 						</label>
 						<input type='text' placeholder='adamsmith' value={inputs.username} onChange={(e) => setInputs({...inputs,username: e.target.value})} className='w-full input input-bordered h-10' />
 					</div>
 					<div>
 						<label className='label'>
-							<span className='text-base label-text'>Password</span>
+							<span className='text-base label-text text-black'>Password</span>
 						</label>
 						<input
 							type='password'
@@ -56,7 +56,7 @@ const Signup = () => {
 					</div>
 					<div>
 						<label className='label'>
-							<span className='text-base label-text'>Confirm Password</span>
+							<span className='text-base label-text text-black'>Confirm Password</span>
 						</label>
 						<input
 							type='password'
@@ -66,7 +66,7 @@ const Signup = () => {
 						/>
 					</div>
 					<GenderCheckbox handleCheckboxChange={handleCheckboxChange} selectedGender={inputs.gender} />
-					<Link className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block' to='/login'>
+					<Link className='text-sm hover:underline text-black hover:text-blue-600 mt-2 inline-block' to='/login'>
 						Already have an account?
 					</Link>
 					<div>

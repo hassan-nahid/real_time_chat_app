@@ -15,7 +15,7 @@ const Home = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <div className="menu bg-base-100 text-base-content min-h-full w-[325px] p-4 opacity-95">
+                    <div className="menu bg-base-200 text-base-content min-h-full w-[325px] p-4 opacity-95">
                         {/* Sidebar content here */}
                         <Sidebar />
                     </div>
